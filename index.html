@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr.Ghost Hosting - Control Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .status-pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto">
+        <header class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-blue-400"><i class="fas fa-ghost mr-2"></i>Mr.Ghost Hosting</h1>
+                <p class="text-gray-400">24/7 Script Hosting Management</p>
+            </div>
+            <div class="text-right">
+                <span class="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/20 status-pulse">
+                    ● System Online
+                </span>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <div class="glass-card p-4 rounded-xl">
+                <p class="text-gray-400 text-sm">CPU Usage</p>
+                <h3 class="text-2xl font-bold text-white">45.2%</h3>
+                <div class="w-full bg-gray-700 h-1.5 mt-2 rounded-full overflow-hidden">
+                    <div class="bg-blue-500 h-full" style="width: 45%"></div>
+                </div>
+            </div>
+            <div class="glass-card p-4 rounded-xl">
+                <p class="text-gray-400 text-sm">RAM Usage</p>
+                <h3 class="text-2xl font-bold text-white">62.8%</h3>
+                <div class="w-full bg-gray-700 h-1.5 mt-2 rounded-full overflow-hidden">
+                    <div class="bg-purple-500 h-full" style="width: 62%"></div>
+                </div>
+            </div>
+            <div class="glass-card p-4 rounded-xl">
+                <p class="text-gray-400 text-sm">Running Files</p>
+                <h3 class="text-2xl font-bold text-white">08/10</h3>
+            </div>
+            <div class="glass-card p-4 rounded-xl">
+                <p class="text-gray-400 text-sm">Uptime</p>
+                <h3 class="text-2xl font-bold text-white">12d 5h 3m</h3>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <div class="p-4 border-b border-white/10 flex justify-between items-center">
+                        <h2 class="font-semibold italic text-lg"><i class="fas fa-folder-open mr-2 text-yellow-500"></i>Active Scripts</h2>
+                        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-1.5 rounded-lg text-sm transition">
+                            <i class="fas fa-upload mr-1"></i> Upload New
+                        </button>
+                    </div>
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="text-gray-500 text-sm bg-black/20">
+                                <th class="p-4">File Name</th>
+                                <th class="p-4">Type</th>
+                                <th class="p-4">Status</th>
+                                <th class="p-4">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5">
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-medium">telegram_bot.py</td>
+                                <td class="p-4 text-sm">Python</td>
+                                <td class="p-4"><span class="text-green-400 text-xs bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20">Running</span></td>
+                                <td class="p-4 space-x-2">
+                                    <button title="Stop" class="text-red-400 hover:text-red-300"><i class="fas fa-stop-circle"></i></button>
+                                    <button title="Restart" class="text-blue-400 hover:text-blue-300"><i class="fas fa-sync-alt"></i></button>
+                                    <button title="Logs" class="text-gray-400 hover:text-white"><i class="fas fa-file-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-medium">server_api.js</td>
+                                <td class="p-4 text-sm">NodeJS</td>
+                                <td class="p-4"><span class="text-red-400 text-xs bg-red-400/10 px-2 py-0.5 rounded border border-red-400/20">Stopped</span></td>
+                                <td class="p-4 space-x-2">
+                                    <button title="Start" class="text-green-400 hover:text-green-300"><i class="fas fa-play-circle"></i></button>
+                                    <button title="Delete" class="text-red-400 hover:text-red-300"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1">
+                <div class="glass-card rounded-xl h-full flex flex-col">
+                    <div class="p-4 border-b border-white/10">
+                        <h2 class="font-semibold text-lg"><i class="fas fa-terminal mr-2 text-green-500"></i>Live Console</h2>
+                    </div>
+                    <div class="p-4 font-mono text-xs text-green-400 overflow-y-auto h-80 flex-grow bg-black/40">
+                        <p>> [INFO] Bot started successfully...</p>
+                        <p>> [INFO] PID: 45672 detected.</p>
+                        <p class="text-yellow-400">> [WARN] High CPU usage detected: 85%</p>
+                        <p>> [INFO] Database connection: OK</p>
+                        <p class="text-blue-400">> [CMD] Executing main.py...</p>
+                        <p class="text-red-400">> [ERR] Connection timeout at socket 5</p>
+                    </div>
+                    <div class="p-2 bg-black/60">
+                        <input type="text" placeholder="Type command..." class="w-full bg-transparent border-none outline-none text-sm p-1 text-white">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-8 pt-4 border-t border-white/10 text-center text-gray-500 text-sm">
+            <p>© 2025 Mr Ghost Hosting Bot | Powered by @mr_ghost34</p>
+        </footer>
+    </div>
+
+</body>
+</html>
